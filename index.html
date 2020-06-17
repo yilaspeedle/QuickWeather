@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>快看天气</title>
+		<link rel="shortcut icon" href="img/logo.png">
+		<link rel="stylesheet" href="css/site.css">
+		<link rel="stylesheet" type="text/css" href="js/swiper/swiper.min.css" />
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js" charset="utf-8"></script>
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/swiper/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/page/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/page/index.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<header>
+			<div class="topbar">
+				<div class="content">
+					<ul class="ultime">
+						<li><span id="timeDay"></span> 星期<span id="timeWeek"></span></li>
+						<li>农历(<span id="timeDay2"></span>)</li>
+						<li><span id="timeAnimal" title="生肖"></span> <span id="timeStar" title="星座"></span></li>
+					</ul>
+				</div>
+			</div>
+			<div class="navbar">
+				<div class="content">
+					<div>
+						<img class="logo" src="img/logo.png" />
+					</div>
+					<nav>
+						<ul id="menuMain">
+							<li>
+								<a href="index.html">首页</a>
+								<i></i>
+							</li>
+							<li>
+								<a href="about.html">关于</a>
+								<i></i>
+							</li>
+							<li>
+								<a href="my.html">我的</a>
+								<i></i>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<div class="main">
+			<div class="content" id="app">
+				<div class="wbox" v-for="item in weathers">
+					<div class="head">
+						<h2>{{item.name}}</h2>
+						<h3>{{item.updateTime}}</h3>
+					</div>
+					<div class="body1">
+						<div class="flex">
+							<div class="flex-1 center">
+								<h3>{{item.temp}}</h3>
+								<h4>&deg;C</h4>
+							</div>
+							<div>
+								<ul class="ul-air">
+									<li><span class="air" :title="item.air.title">{{item.air.text}}</span></li>
+									<li><i class="icon-w2 icon-w2-wind"></i><label>{{item.windDir}}</label><span>{{item.windGrade}}</span></li>
+									<li><i class="icon-w2 icon-w2-wet"></i><label>相对湿度</label><span>{{item.wet}}</span></li>
+								</ul>
+							</div>
+						</div>
+						<hr />
+					</div>
+					<div>
+						<table class="grid">
+							<tr>
+								<td v-for="day, index in item.days" :title="day.title" :class="{today:index==0}">{{day.date}}</td>
+							</tr>
+							<tr>
+								<td v-for="day, index in item.days" :title="day.title"><img class='icon-w3' :src='day.icon1' /></td>
+							</tr>
+							<tr>
+								<td v-for="day, index in item.days" :title="day.title">{{day.high}}</td>
+							</tr>
+							<tr>
+								<td v-for="day, index in item.days" :title="day.title">{{day.low}}</td>
+							</tr>
+							<tr>
+								<td v-for="day, index in item.days" :title="day.title"><img class='icon-w3' :src='day.icon2' /></td>
+							</tr>
+							<tr class="gray">
+								<td v-for="day, index in item.days" :title="day.title"><span v-html="day.wind"></span></td>
+							</tr>
+						</table>
+					</div>
+					<div class="foot">
+						<div class="flex-1" :title="item.sun.title">
+							<i class="icon-w2 icon-w2-sun"></i>
+							<label>紫外线指数</label>
+							<span>{{item.sun.text}}</span>
+						</div>
+						<div class="flex-1" :title="item.coat.title">
+							<i class="icon-w2 icon-w2-cloth"></i>
+							<label>穿衣指数</label>
+							<span>{{item.coat.text}}</span>
+						</div>
+						<div class="flex-1" :title="item.car.title">
+							<i class="icon-w2 icon-w2-car"></i>
+							<label>洗车指数</label>
+							<span>{{item.car.text}}</span>
+						</div>
+						<div class="flex-1" :title="item.cold.title">
+							<i class="icon-w2 icon-w2-drug"></i>
+							<label>感冒指数</label>
+							<span>{{item.cold.text}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<p>Copyright ©2020 北京开速科技有限公司 All Right Reserved</p>
+		</footer>
+		<div class="bg-page">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<img src="img/bg11.jpg" />
+					</div>
+					<div class="swiper-slide">
+						<img src="img/bg12.jpg" />
+					</div>
+					<div class="swiper-slide">
+						<img src="img/bg13.jpg" />
+					</div>
+					<div class="swiper-slide">
+						<img src="img/bg14.jpg" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>快看天气</title>
+		<link rel="shortcut icon" href="img/logo.png">
+		<link rel="stylesheet" href="css/site.css">
+		<link rel="stylesheet" type="text/css" href="js/swiper/swiper.min.css" />
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js" charset="utf-8"></script>
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/swiper/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/page/common.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<header>
+			<div class="topbar">
+				<div class="content">
+					<ul class="ultime">
+						<li><span id="timeDay"></span></li>
+						<li>星期<span id="timeWeek"></span></li>
+						<li>农历 <span id="timeDay2"></span></li>
+						<li>生肖 <span id="timeAnimal"></span></li>
+						<li>星座 <span id="timeStar"></span></li>
+					</ul>
+				</div>
+			</div>
+			<div class="navbar">
+				<div class="content">
+					<div>
+						<img class="logo" src="img/logo.png" />
+					</div>
+					<nav>
+						<ul id="menuMain">
+							<li>
+								<a href="index.html">首页</a>
+								<i></i>
+							</li>
+							<li>
+								<a href="about.html">关于</a>
+								<i></i>
+							</li>
+							<li>
+								<a href="my.html">我的</a>
+								<i></i>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<div class="main">
+			<div class="content abt-page flex">
+				<div class="conLeft">
+					<ul>
+						<li><a href="#abtUs">关于我们</a></li>
+						<li><a href="#version">版本历程</a></li>
+						<li><a href="#contact">联系我们</a></li>
+					</ul>
+				</div>
+				<article>
+					<section>
+						<h1 id="abtUs">关于我们</h1>
+						<div class="abtdiv">
+							<p>快看天气，便捷查看我的天气。</p>
+							<p>前端菜鸟小炸妹的处女作。大牛，我来啦！</p>
+							<p>PC，手机，微信</p>
+						</div>
+					</section>
+					<section>
+						<h1 id="version">版本历程</h1>
+							<div class="road-dashline"></div>
+							<ul class="ver-ul">
+								<li class="ver-li flex">
+									<h3>1.1</h3>
+									<div class="item-icon">
+										<div class="item-img"></div>
+										<div class="item-line"></div>
+									</div>
+									<div class="item-con">
+										<h4>
+											小天鹅
+										</h4>
+										<p>微信，小炸妹还在修炼中，期待喔！</p>
+									</div>
+								</li>
+								<li class="ver-li flex">
+									<h3>1.0</h3>
+									<div class="item-icon">
+										<div class="item-img"></div>
+										<div class="item-line"></div>
+									</div>
+									<div class="item-con">
+										<h4>
+											小天鹅
+										</h4>
+										<p>
+											全新重构，Vue重磅出击。
+										</p>
+										<p>
+											MVVM、数据绑定、事件绑定、条件渲染、列表渲染、双向绑定、文本插值、属性绑定、Class绑定
+										</p>
+										<p>
+											{{插值}}, v-bind, v-html, v-on, v-model, v-if, v-for, :属性, @事件
+										</p>
+									</div>
+								</li>
+								<li class="ver-li flex">
+									<h3>0.5</h3>
+									<div class="item-icon">
+										<div class="item-img"></div>
+										<div class="item-line"></div>
+									</div>
+									<div class="item-con">
+										<h4>
+											手拉手，一起走
+										</h4>
+										<p>
+											响应式布局。
+										</p>
+										<p>
+											PC，手机；谷歌、IE、火狐
+										</p>
+									</div>
+								</li>
+								<li class="ver-li flex">
+									<h3>0.4</h3>
+									<div class="item-icon">
+										<div class="item-img"></div>
+										<div class="item-line"></div>
+									</div>
+									<div class="item-con">
+										<h4>
+											破壳
+										</h4>
+										<p>
+											动态首页，获取天气。
+										</p>
+										<p>
+											原生JS, JQuery，Ajax, XML，JSON。
+										</p>
+									</div>
+								</li>
+								<li class="ver-li flex">
+									<h3>0.3</h3>
+									<div class="item-icon">
+										<div class="item-img"></div>
+										<div class="item-line"></div>
+									</div>
+									<div class="item-con">
+										<h4>
+											继续孵蛋
+										</h4>
+										<p>
+											我的城市页面。
+										</p>
+										<p>
+											加载省市列表、添加删除城市、上移下移、定位所在城市。
+										</p>
+										<p>
+											H5：本地存储（localStorage）
+										</p>
+									</div>
+								</li>
+								<li class="ver-li flex">
+									<h3>0.2</h3>
+									<div class="item-icon">
+										<div class="item-img"></div>
+										<div class="item-line"></div>
+									</div>
+									<div class="item-con">
+										<h4>
+											孵蛋
+										</h4>
+										<p>
+											静态布局首页。
+										</p>
+										<p>
+											JS获取本地日期。
+										</p>
+										
+										<p>
+											Ajax请求服务端获取农历、生肖、星座。
+										</p>
+										
+										<p>
+											H5：header, footer, nav, aside, section, article
+										</p>
+										
+										<p>
+											CSS3：圆角、效果、透明、效果、动画、Flex布局
+										</p>
+									</div>
+								</li>
+								<li class="ver-li flex">
+									<h3>0.1</h3>
+									<div class="item-icon">
+										<div class="item-img"></div>
+									</div>
+									<div class="item-con">
+										<h4>
+											生蛋
+										</h4>
+										<p>
+											构思、设计、创建项目，搭建页面框架。
+										</p>
+										
+										<p>
+											工具：HBuilderX，VS Code，SVN，PS，Axure，XMind
+										</p>
+										
+										<p>
+											技术：HTML，CSS，Javascript，JQuery。
+										</p>
+									</div>
+								</li>
+							</ul>
+					</section>
+					<section>
+						<h1 id="contact">联系我们</h1>
+						<div class="cot-items">
+							<ul class="cot-itemsul flex">
+								<li>
+									<!-- <ul class="cot-introduct flex">
+										<li class="cot-img"></li>
+										<li class="cot-call">
+											<dl>
+												<dt><h4>前端工程师</h4></dt>
+												<dt><h4>小炸妹</h4></dt>
+												<dt class="dt-phone"><h4>158XXX32XXX</h4></dt>
+												<dt class="dt-mail"><h4>2416992377@qq.com</h4></dt>
+											</dl>
+										</li>
+									</ul> -->
+									<article class="cot-introduct flex">
+										<aside class="cot-img"></aside>
+										<div class="cot-call">
+											<h4>前端工程师</h4>
+											<h4>小炸妹</h4>
+											<h4 class="dt-phone">158XXX32XXX</h4>
+											<h4 class="dt-mail">2416992377@qq.com</h4>
+										</div>
+										
+									</article>
+								</li>
+								<li>
+									<!-- <ul class="cot-introduct flex">
+										<li class="cot-img"></li>
+										<li class="cot-call">
+											<dl>
+												<dt>政企合作</dt>
+												<dt class="dt-phone">19931591447</dt>
+												<dt class="dt-mail">chibi@moji.com</dt>
+											</dl>
+										</li>
+									</ul> -->
+									<article class="cot-introduct flex">
+										<aside class="cot-img"></aside>
+										<div class="cot-call">
+											<h4>政企合作</h4>
+											<h4>政企合作</h4>
+											<h4 class="dt-phone">19931591447</h4>
+											<h4 class="dt-mail">chibi@moji.com</h4>
+										</div>
+										
+									</article>
+								</li>
+								<!-- <li>
+										<ul class="cot-introduct flex">
+											<li class="cot-img"></li>
+											<li class="cot-call">
+												<dl>
+													<dt>内容运营合作</dt>
+													<dt class="dt-phone">18510391685</dt>
+													<dt class="dt-mail">bin.shi@moji.com</dt>
+												</dl>
+											</li>
+										</ul>
+									</li> -->
+							</ul>
+						</div>
+					</section>
+				</article>
+			</div>
+		</div>
+		<footer>
+			<p>Copyright ©2020 北京开速科技有限公司 All Right Reserved</p>
+		</footer>
+		<div class="bg-page">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<img src="img/bg11.jpg" />
+					</div>
+					<div class="swiper-slide">
+						<img src="img/bg12.jpg" />
+					</div>
+					<div class="swiper-slide">
+						<img src="img/bg13.jpg" />
+					</div>
+					<div class="swiper-slide">
+						<img src="img/bg14.jpg" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

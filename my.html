@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-sacle=1,user-scalable=no" />
+		<title>快看天气</title>
+		<link rel="shortcut icon" href="img/logo.png">
+		<link rel="stylesheet" href="css/site.css">
+		<link rel="stylesheet" type="text/css" href="js/swiper/swiper.min.css" />
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js" charset="utf-8"></script>
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/swiper/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/page/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/page/my.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<header>
+			<div class="topbar">
+				<div class="content">
+					<ul class="ultime">
+						<li><span id="timeDay"></span> 星期<span id="timeWeek"></span></li>
+						<li>农历(<span id="timeDay2"></span>)</li>
+						<li><span id="timeAnimal" title="生肖"></span> <span id="timeStar" title="星座"></span></li>
+					</ul>
+				</div>
+			</div>
+			<div class="navbar">
+				<div class="content">
+					<div>
+						<img class="logo" src="img/logo.png" />
+					</div>
+					<nav>
+						<ul id="menuMain">
+							<li>
+								<a href="index.html">首页</a>
+								<i></i>
+							</li>
+							<li>
+								<a href="about.html">关于</a>
+								<i></i>
+							</li>
+							<li>
+								<a href="my.html">我的</a>
+								<i></i>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<div class="main">
+			<div class="content">
+				<div class="my-page" id="app">
+					<div class="my-head">
+						<h2>我的城市</h2>
+						<div class="btn-toolbar">
+							<div class="field">
+								<label>省</label>
+								<select v-model="province" @change="onChangeProvince">
+									<option v-for="item in areas" v-bind:value="item.Code" v-if="item.Level ==2">{{item.Name}}</option>
+								</select>
+							</div>
+							<div class="field">
+								<label>市</label>
+								<select v-model="city">
+									<option v-for="item in areas" v-bind:value="item" v-if="item.Level ==3 && item.ParentCode == province" :key="item.Code">{{item.Name}}</option>
+								</select>
+							</div>
+							<div class="field">
+								<button @click="addCity">添加</button>
+								<button @click="locateCity">定位</button>
+							</div>
+						</div>
+					</div>
+					<table class="datagrid" id="tblMy">
+						<tr v-for="item,index in myCities" :class="{selected: index == row}">
+							<td>{{item[1]}}</td>
+							<td class="right">
+								<button @click="moveUp(index)" v-if="index > 0">上移</button>
+								<button @click="moveDown(index)" v-if="index < myCities.length-1">下移</button>
+								<button @click="removeCity(item)">删除</button>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<p>Copyright ©2020 北京开速科技有限公司 All Right Reserved</p>
+		</footer>
+		<div class="bg-page">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<img src="img/bg11.jpg" />
+					</div>
+					<div class="swiper-slide">
+						<img src="img/bg12.jpg" />
+					</div>
+					<div class="swiper-slide">
+						<img src="img/bg13.jpg" />
+					</div>
+					<div class="swiper-slide">
+						<img src="img/bg14.jpg" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

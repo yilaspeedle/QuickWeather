@@ -1,0 +1,620 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 14px;
+	height: 100%;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+ul,
+li {
+	list-style: none;
+	list-style-type: none;
+}
+
+.flex {
+	display: flex;
+}
+
+.flex-v {
+	display: flex;
+	flex-direction: row;
+}
+
+.flex-1 {
+	flex: 1;
+}
+
+.flex-3 {
+	flex: 3;
+}
+
+hr {
+	border: none;
+	height: 1px;
+	background-color: #ccc;
+}
+
+.center {
+	text-align: center;
+}
+
+.w100p {
+	width: 100%;
+}
+
+.right {
+	text-align: right;
+}
+
+.gray {
+	color: #666;
+}
+
+.hidden {
+	display: none;
+}
+
+.main {}
+
+.content {
+	width: 95%;
+	margin: auto;
+}
+
+header {
+	background-color: rgba(30, 30, 30, 0.5);
+	color: white;
+}
+
+.topbar {
+	background-color: rgba(134, 169, 221, 0.2);
+	color: white;
+	padding: 15px 0;
+	height: auto;
+	overflow: auto;
+}
+
+.navbar {}
+
+.navbar .content {
+	height: 80px;
+	display: flex;
+	align-items: center;
+}
+
+.logo {
+	width: 60px;
+	margin-right: 50px;
+}
+
+header nav ul,
+header nav li {
+	list-style: none;
+	list-style-type: none;
+	float: left;
+}
+
+header nav ul li {
+	margin: 0 20px;
+	text-align: center;
+}
+
+header nav ul li a {
+	padding: 0 10px;
+}
+
+header nav ul li>i {
+	display: block;
+	height: 3px;
+	width: 0%;
+	margin: auto;
+	margin-top: 5px;
+	background-color: red;
+	transition: width 0.3s ease;
+}
+
+header nav ul li.selected>i {
+	width: 100%;
+}
+
+header nav ul li:hover>i {
+	width: 100%;
+}
+
+
+.ultime,
+.ultime li {
+	list-style: none;
+	list-style-type: none;
+	text-align: right;
+}
+
+.ultime li+li {
+	margin-left: 30px;
+}
+
+footer {
+	background-color: rgba(80, 80, 80, 0.8);
+	color: #fff;
+	text-align: center;
+	padding: 15px 0;
+	font-size: 12px;
+}
+
+.bg-page {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+.swiper-container {
+	width: 100%;
+	height: 100%;
+}
+
+.swiper-container img {
+	width: 100%;
+	height: 100%;
+}
+
+/* Icon
+---------------------------- */
+.wbox {
+	width: 98%;
+	font-size: 12px;
+	display: block;
+	margin: 10px auto;	
+	position: relative;
+	background-color: rgba(255, 255, 255, 0.7);
+}
+
+.bg-mask {
+	background-color: white;
+	opacity: 0.7;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+}
+
+.bg-content {
+	z-index: 1;
+	position: relative;
+}
+
+.wbox .head {
+	background-color: #043567;
+	color: white;
+	padding: 8px 15px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.wbox .head h2 {
+	font-size: 18px;
+	font-weight: normal;
+}
+
+.wbox .head h3 {
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.wbox .body1 {
+	padding: 15px 0px;
+}
+
+.wbox .body1 hr {
+	margin: 10px 15px 0px 15px;
+}
+
+.wbox .body1 h3 {
+	font-size: 80px;
+	font-weight: normal;
+	display: inline-block;
+	vertical-align: top;
+	color: #043567;
+}
+
+.wbox .body1 h4 {
+	font-size: 20px;
+	font-weight: normal;
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	top: 25px;
+	color: #043567;
+}
+
+.wbox .body3 {
+	margin: 15px 0px;
+}
+
+.wbox .body3 a {
+	width: 70%;
+	border-radius: 20px;
+	padding: 8px;
+	text-align: center;
+	border: solid 1px #93bade;
+	color: #1f6ebd;
+	display: inline-block;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.ul-air li {
+	margin: 10px;
+}
+
+.ul-air label {
+	margin: 0 10px 0 5px;
+}
+
+.wbox .air {
+	padding: 2px 30px;
+	display: inline-block;
+	color: white;
+	background-color: rgb(156, 202, 127);
+	border-radius: 20px;
+}
+
+.wbox .grid {
+	width: 100%;
+}
+
+.wbox .today {
+	color: #1f6ebd;
+}
+
+.wbox .grid td {
+	text-align: center;
+	padding: 5px;
+}
+
+.wbox .foot {
+	display: flex;
+	margin-top: 15px;
+}
+
+.wbox .foot .flex-1 {
+	background-color: #6381a1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 5px;
+}
+
+.wbox .foot .flex-1+.flex-1 {
+	margin-left: 3px;
+}
+
+.wbox .foot .flex-1 label {
+	font-size: 12px;
+	color: #c3dcf4;
+	margin: 5px 0px;
+}
+
+.wbox .foot .flex-1 span {
+	color: white;
+	font-size: 12px;
+	margin-bottom: 5px;
+}
+
+/* Icon - Weather
+---------------------------- */
+.icon-w3 {
+	width: 30px;
+}
+
+.icon-weather {
+	background-image: url("../img/icon/weather.png");
+	background-repeat: no-repeat;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+}
+
+.icon-sun {
+	background-position: 0px 0px;
+}
+
+.icon-sun-cloud {
+	background-position: -80px 0px;
+}
+
+.icon-sun-cloud2 {
+	background-position: -160px 0px;
+}
+
+.icon-sun-rain {
+	background-position: -240px 0px;
+}
+
+.icon-light-rain1 {
+	background-position: -320px 0px;
+}
+
+.icon-light-rain2 {
+	background-position: -400px 0px;
+}
+
+.icon-rain-snow {
+	background-position: -480px 0px;
+}
+
+.icon-rain1 {
+	background-position: -560px 0px;
+}
+
+.icon-rain2 {
+	background-position: -640px 0px;
+}
+
+.icon-wind {
+	background-position: -720px 0px;
+}
+
+.icon-fog {
+	background-position: -800px 0px;
+}
+
+.icon-cloud-rain {
+	background-position: -880px 0px;
+}
+
+.icon-rain3 {
+	background-position: -0px -80px;
+}
+
+.icon-rain4 {
+	background-position: -80px -80px;
+}
+
+.icon-rain5 {
+	background-position: -160px -80px;
+}
+
+.icon-rain6 {
+	background-position: -240px -80px;
+}
+
+.icon-sun-snow {
+	background-position: -320px -80px;
+}
+
+.icon-snow1 {
+	background-position: -400px -80px;
+}
+
+.icon-snow2 {
+	background-position: -480px -80px;
+}
+
+.icon-snow3 {
+	background-position: -560px -80px;
+}
+
+.icon-snow4 {
+	background-position: -640px -80px;
+}
+
+.icon-fog2 {
+	background-position: -800px -80px;
+}
+
+.icon-cloud-snow {
+	background-position: -880px -80px;
+}
+
+.icon-moon {
+	background-position: 0px -320px;
+}
+
+.icon-moon-cloud {
+	background-position: -80px -320px;
+}
+
+.icon-moon-cloud2 {
+	background-position: -160px -320px;
+}
+
+.icon-moon-rain {
+	background-position: -240px -320px;
+}
+
+.icon-light-rain1-m {
+	background-position: -320px -320px;
+}
+
+.icon-light-rain2-m {
+	background-position: -400px -320px;
+}
+
+.icon-rain-snow-m {
+	background-position: -480px -320px;
+}
+
+.icon-rain1-m {
+	background-position: -560px -320px;
+}
+
+.icon-wind-m {
+	background-position: -640px -320px;
+}
+
+.icon-fog-m {
+	background-position: -720px -320px;
+}
+
+.icon-rain3-m {
+	background-position: -0px -400px;
+}
+
+.icon-rain4-m {
+	background-position: -80px -400px;
+}
+
+.icon-rain5-m {
+	background-position: -160px -400px;
+}
+
+.icon-rain6-m {
+	background-position: -240px -400px;
+}
+
+.icon-moon-snow {
+	background-position: -320px -400px;
+}
+
+.icon-snow1-m {
+	background-position: -400px -400px;
+}
+
+.icon-snow2-m {
+	background-position: -480px -400px;
+}
+
+.icon-snow3-m {
+	background-position: -560px -400px;
+}
+
+.icon-snow4-m {
+	background-position: -640px -400px;
+}
+
+.icon-fog2-m {
+	background-position: -800px -400px;
+}
+
+.icon-cloud-snow-m {
+	background-position: -880px -400px;
+}
+
+/* Icon 2
+---------------------------- */
+.icon-w2 {
+	background-image: url("../img/icon/weather2.png");
+	background-repeat: no-repeat;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.icon-w2-wind {
+	height: 10px;
+	width: 16px;
+	background-position: -407px -368px;
+}
+
+.icon-w2-wet {
+	width: 16px;
+	height: 17px;
+	background-position: -376px -368px;
+}
+
+.icon-w2-sun {
+	width: 32px;
+	height: 33px;
+	background-position: -320px -414px;
+}
+
+.icon-w2-cloth {
+	width: 30px;
+	height: 33px;
+	background-position: -430px -416px;
+}
+
+.icon-w2-car {
+	width: 32px;
+	height: 33px;
+	background-position: -371px -415px;
+}
+
+.icon-w2-drug {
+	width: 30px;
+	height: 33px;
+	background-position: -471px -416px;
+}
+
+/* My Page
+---------------------------- */
+.my-page {
+	margin: 10px 0px;
+	background-color: rgba(255, 255, 255, 0.7);
+	padding: 15px;
+	border-radius: 5px;
+}
+
+.my-head {
+	display: flex;
+	border-bottom: solid 2px #4a7aac;
+}
+
+.my-head h2 {
+	font-size: 18px;
+	margin-bottom: 10px;
+	color: #043567;
+	flex: 1;
+}
+
+.my-head select {
+	min-width: 120px;
+}
+
+.datagrid {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0px;
+}
+
+.datagrid tr:hover {
+	background-color: #eee;
+}
+
+.datagrid tr.selected {
+	background-color: #4a7aac;
+	color: white;
+}
+
+.datagrid td {
+	border-bottom: solid 1px #ccc;
+	padding: 5px;
+}
+
+.field {
+	display: inline-block;
+}
+
+.field+.field {
+	margin-left: 20px;
+}
+
+.field label {
+	margin-right: 5px;
+}
+
+button {
+	padding: 3px 10px;
+}
+
+button+button {
+	margin-left: 5px;
+}
+
+select {
+	padding: 3px 10px;
+}

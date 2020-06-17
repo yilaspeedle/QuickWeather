@@ -1,0 +1,2 @@
+@import url("pc.css") screen and (min-device-width: 1000px);
+@import url("phone.css") screen and (max-device-width:1000px);
