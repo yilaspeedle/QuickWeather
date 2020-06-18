@@ -10,3 +10,6 @@
 
 技术要点：
 H5, CSS3, Javascript, JQuery, Vue, Ajax, JSON, XML
+
+在线演示: 
+http://weather.speedle.top
